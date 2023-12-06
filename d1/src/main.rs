@@ -8,7 +8,9 @@ fn sum_calib_values(input: &str) -> u32 {
         let line_chars = line.chars().collect::<Vec<char>>();
         let first = line_chars[line.find(|c: char| c.is_digit(10)).unwrap_or_default()];
         let last = line_chars[line.rfind(|c: char| c.is_digit(10)).unwrap_or_default()];
-        acc + format!("{}{}", first, last).parse::<u32>().unwrap_or_default()
+        acc + format!("{}{}", first, last)
+            .parse::<u32>()
+            .unwrap_or_default()
     })
 }
 
